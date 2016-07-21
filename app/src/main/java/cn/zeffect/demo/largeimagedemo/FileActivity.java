@@ -19,6 +19,7 @@ public class FileActivity extends Activity {
         super.onCreate(savedInstanceState);
         SubsamplingScaleImageView imageView = new SubsamplingScaleImageView(this);
         setContentView(imageView);
-        imageView.setImage(ImageSource.uri(Uri.fromFile(new File("/storage/emulated/0/sina/weibo/weibo/img-5a8bc8b655dafb0e950a57a258aa0346.jpg"))));
+        String filePath = getIntent().getStringExtra("filepath");
+        imageView.setImage(ImageSource.uri(Uri.fromFile(new File(filePath))));
     }
 }
